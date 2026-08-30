@@ -1,7 +1,9 @@
 export function isPalindrome(s) {
     let i = 0, j = s.length - 1;
     while (i < j) {
-        if (s[i].toLowerCase() !== s[j].toLowerCase()) return false;
+        const left = typeof s[i] === 'string' ? s[i].toLowerCase() : s[i];
+        const right = typeof s[j] === 'string' ? s[j].toLowerCase() : s[j];
+        if (left !== right) return false;
         i++; j--;
     }
     return true;
